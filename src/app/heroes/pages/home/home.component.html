@@ -1,5 +1,19 @@
-<h1>Heroes APP</h1>
-<hr>
 
 <!-- rutas hijas  -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav> 
+        <h1>Sidenav</h1>
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <button mat-icon-button
+                (click)="sidenav.toggle()">
+            <mat-icon>
+                menu
+            </mat-icon> 
+        </button>
+    </mat-toolbar>
+</mat-sidenav-container>
