@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  ApiEndpoint: 'https://bryan-parada.com/apiHero'
 };
