@@ -3,12 +3,12 @@
         <h1>Search Your Hero</h1>
         <mat-divider></mat-divider>
     </div>
-    <div>
+    <div fxLayout="column">
         <h3>Search</h3> 
 
         <mat-form-field >
             <input type="text" 
-                   placeholder="Pick one" 
+                   placeholder="Type your hero here!" 
                    aria-label="Number" 
                    matInput 
                    [(ngModel)]="termino"
@@ -20,15 +20,33 @@
                 <mat-option *ngFor="let hero of heroes " [value]="hero">
                     {{hero.superhero}}
                 </mat-option>
+
+                <mat-option value="" *ngIf="heroes.length === 0 && termino.length > 0">
+                    Your search with the term <strong>"{{ termino }}"</strong> didn't return any data 
+                </mat-option>
+
             </mat-autocomplete>
+
         </mat-form-field>
 
+        <div *ngIf="selectedHero">
         <div>
-            <pre>
-                {{selectedHero | json}}
-            </pre>
-        </div>
+            <mat-card >
+                <mat-card-header>
+                    <mat-card-title>Json Data:</mat-card-title>  
+                </mat-card-header>
 
+                <mat-card-content>
+                    <pre >{{selectedHero | json}}</pre>
+                </mat-card-content>
+            </mat-card>
+
+
+        </div>
+        <div >
+            <app-heroe-tarjeta [hero]="selectedHero"></app-heroe-tarjeta>
+        </div>
+</div>
 
     </div>
 </div>
