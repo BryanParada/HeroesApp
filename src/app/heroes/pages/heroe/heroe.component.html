@@ -1,1 +1,9 @@
-<p>heroe works!</p>
+<mat-grid-list cols="1" *ngIf="!hero; else divHeroe">
+    <mat-grid-tile>
+         <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divHeroe> 
+ {{hero | json}} 
+</ng-template>
