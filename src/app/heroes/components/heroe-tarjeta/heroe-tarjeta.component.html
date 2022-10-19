@@ -18,10 +18,13 @@
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-button color="warn">
+        <button mat-button color="warn"
+        class="nav-link" 
+                [routerLink]="['/heroes/', hero.id]">
             Read More...
         </button>
-        <button mat-button color="info">
+        <button mat-button color="info"
+                [routerLink]="['/heroes/editar/', hero.id]">
             Edit...
         </button>
     </mat-card-actions>
