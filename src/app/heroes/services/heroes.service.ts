@@ -31,5 +31,9 @@ export class HeroesService {
      return this.http.post<Hero>(`${this.baseUrl}/heroes/`, hero)
   }
 
+  updateHero( hero: Hero):Observable<Hero> {
+    return this.http.put<Hero>(`${this.baseUrl}/heroes/${ hero.id}`, hero)
+ }
+
 
 }
