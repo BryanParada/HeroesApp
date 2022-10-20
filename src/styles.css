@@ -11,3 +11,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .red-icon{
     color: rgb(189, 2, 2);
 }
+
+.buttonSize{
+    padding: 0 45px !important;  
+}
+
+ 
