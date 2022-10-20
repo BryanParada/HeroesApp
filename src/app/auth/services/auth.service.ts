@@ -26,7 +26,9 @@ export class AuthService {
               //llegar al subscribe de login.component
               // pasara primero por el sgte tap.
               //informacion de backend se almacenara en variable de tipo interface
-              tap(   auth => this._auth = auth   )
+              tap( auth => this._auth = auth   ),
+              tap( auth => localStorage.setItem("id", auth.id))
+
             );
   }
 }
