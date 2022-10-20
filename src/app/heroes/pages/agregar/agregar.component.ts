@@ -37,6 +37,8 @@ export class AgregarComponent implements OnInit {
 
   }
 
+  dummy: number = 0;
+
   constructor( private heroesService: HeroesService,
                private activatedRoute: ActivatedRoute,
                private router: Router) { }
@@ -89,6 +91,13 @@ export class AgregarComponent implements OnInit {
         .subscribe( resp => {
           this.router.navigate(['/heroes']);
         } );
+  }
+
+  actualizaIMG(event: any){
+
+    console.log('Hola Mundo');
+    this.dummy = 1;
+    
   }
 
 }

@@ -3,11 +3,12 @@ import { Hero } from '../interfaces/heroes.interface';
 
 @Pipe({
   name: 'imagen'
+  // , pure: false
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(heroe: Hero): string {
- 
+  transform(heroe: Hero, trigger?:number): string {
+
     if(!heroe.id && !heroe.alt_img){
       return 'assets/no-image.png'
     } else if (heroe.alt_img){
