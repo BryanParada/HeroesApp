@@ -1,4 +1,5 @@
-<h1>Add New Hero</h1> {{hero.superhero}}
+<h1>{{ (hero.id) ? 'Update' : 'Add New' }}
+    Hero</h1> {{hero.superhero}}
 
 <div fxLayout="row"
      fxLayoutGap="40px"
@@ -74,7 +75,7 @@
                 (click)="saveHero()"
                 class="buttonSize">
             <mat-icon>edit</mat-icon>
-            Guardar
+            {{ (hero.id) ? 'Update' : 'Add New' }}
         </button>
 
         <span class="spacer"></span>
@@ -86,7 +87,7 @@
                     *ngIf="hero.id"
                     class="buttonSize">
                 <mat-icon>delete</mat-icon>
-                Borrar
+                Remove
             </button>
         </div>
 
